@@ -1,12 +1,16 @@
+#include <stdio.h>
+#include <string.h>
+#include <malloc.h>
+
 #ifndef GTESTEXAMPLE_PERSON_H
 #define GTESTEXAMPLE_PERSON_H
 
-struct Person;
+typedef struct Person Person;
 
-typedef char *(*GetFirstNameFunction)(struct Person* person);
-typedef char *(*GetLastNameFunction)(struct Person* person);
-typedef void (*SetFirstNameFunction)(struct Person* person, char* fN);
-typedef void (*SetLastNameFunction)(struct Person* person, char* lN);
+typedef char *(*GetFirstNameFunction)(Person* person);
+typedef char *(*GetLastNameFunction)(Person* person);
+typedef void (*SetFirstNameFunction)(Person* person, const char* fN);
+typedef void (*SetLastNameFunction)(Person* person, const char* lN);
 
 struct Person
 {
@@ -19,11 +23,9 @@ struct Person
     SetLastNameFunction setLastName;
 };
 
-typedef struct Person Person;
-
 char* getFirstName(Person* person);
 char* getLastName(Person* person);
-void setFirstName(Person* person, char* fN);
-void setLastName(Person* person, char* lN);
+void setFirstName(Person* person, const char* fN);
+void setLastName(Person* person, const char* lN);
 
 #endif //GTESTEXAMPLE_PERSON_H

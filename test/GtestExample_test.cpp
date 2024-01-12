@@ -13,13 +13,14 @@ TEST(GTestTest, Initialization_Test)
     person->setFirstName = setFirstName;
     person->setLastName = setLastName;
 
-    char* fN = "Inverse";
-    char* lN = "Derivative";
+    const char* fN = "Inverse";
+    const char* lN = "Derivative";
 
     // Step 2: Do Work
 
-    person->setFirstName(person, "Inverse");
-    person->setLastName(person, "Derivative");
+    person->setFirstName(person, "First");
+    person->setFirstName(person, fN);
+    person->setLastName(person, lN);
 
     // Step 3: Test
 

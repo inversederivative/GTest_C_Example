@@ -3,6 +3,24 @@
 //
 #include <Person.h>
 
+Person* createPerson() {
+
+    Person* person = (Person *)malloc(sizeof(Person));
+    if (!person)
+    {
+        // Handle memory allocation failure
+        fprintf(stderr, "Error: Unable to allocate memory for new Person.\n");
+        return NULL;
+    }
+
+    person->getFirstName = getFirstName;
+    person->getLastName = getLastName;
+    person->setFirstName = setFirstName;
+    person->setLastName = setLastName;
+
+    return person;
+}
+
 char* getFirstName(Person* person)
 {
     if (person)
@@ -70,4 +88,5 @@ void setLastName(Person* person, const char *lN)
         }
     }
 }
+
 

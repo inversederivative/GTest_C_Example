@@ -23,6 +23,7 @@ struct Person
     SetLastNameFunction setLastName;
 };
 
+Person* createPerson();
 char* getFirstName(Person* person);
 char* getLastName(Person* person);
 void setFirstName(Person* person, const char* fN);

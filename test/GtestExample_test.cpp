@@ -6,12 +6,7 @@
 
 TEST(GTestTest, Initialization_Test)
 {
-    auto person = (Person*)malloc(sizeof(Person));
-
-    person->getFirstName = getFirstName;
-    person->getLastName = getLastName;
-    person->setFirstName = setFirstName;
-    person->setLastName = setLastName;
+    auto person = createPerson();
 
     const char* fN = "Inverse";
     const char* lN = "Derivative";
